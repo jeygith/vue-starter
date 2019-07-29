@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
+
+    <!-- js -->
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+<!-- plain javascript -->
+<section class="section container">
+</section>
+
+<!-- vue -->
+<section id="app" class="section container">
+    <h1 class="title">{{text}}</h1>
+
+    <input type="text" class="input" v-model="text">
+</section>
+
+<!-- our javascript -->
+<script>
+
+    // plain old javascript
+
+    // jquery
+    $('input').on('keyup', (e) => $('h1').text(e.target.value));
+
+    // vue
+    const app = new Vue({
+        el: '#app',
+        data: {
+            text: "Hello world"
+        }
+    })
+
+
+</script>
+</body>
+</html>
